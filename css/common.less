@@ -1,0 +1,111 @@
+// 屏幕分割份数
+@screenSplit: 15;
+// 定义屏幕数组
+@slist: 320px, 360px, 375px, 384px, 400px, 414px, 424px, 480px, 540px, 720px, 750px;
+@slen: length(@slist);
+
+// PC端定义
+html {
+  font-size: (extract(@slist, @slen) / @screenSplit);
+}
+
+// 设置常见屏幕尺寸
+.loop(@index) when (@index <= @slen){
+  @media screen and (min-width: extract(@slist, @index)) {
+    html {
+      font-size: (extract(@slist, @index) / @screenSplit);
+    }
+  }
+  .loop(@index + 1);
+}
+
+.loop(1);
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?9gmrsg');
+  src:  url('../fonts/icomoon.eot?9gmrsg#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?9gmrsg') format('truetype'),
+    url('../fonts/icomoon.woff?9gmrsg') format('woff'),
+    url('../fonts/icomoon.svg?9gmrsg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+
+// @media screen and (min-width: @s320) {
+//   html {
+//     font-size: (@s320 / @screenSplit);
+//   }
+// }
+
+// // 360宽 分15份
+// @media screen and (min-width: @s360) {
+//   html {
+//     font-size: (@s360 / @screenSplit);
+//   }
+// }
+
+// // 375宽 分15份
+// @media screen and (min-width: @s375) {
+//   html {
+//     font-size: (@s375 / @screenSplit);
+//   }
+// }
+
+// // 384宽 分15份
+// @media screen and (min-width: @s384) {
+//   html {
+//     font-size: (@s384 / @screenSplit);
+//   }
+// }
+
+// // 400宽 分15份
+// @media screen and (min-width: @s400) {
+//   html {
+//     font-size: (@s400 / @screenSplit);
+//   }
+// }
+
+// // 414宽 分15份
+// @media screen and (min-width: @s414) {
+//   html {
+//     font-size: (@s414 / @screenSplit);
+//   }
+// }
+
+// // 424宽 分15份
+// @media screen and (min-width: @s424) {
+//   html {
+//     font-size: (@s424 / @screenSplit);
+//   }
+// }
+
+// // 480宽 分15份
+// @media screen and (min-width: @s480) {
+//   html {
+//     font-size: (@s480 / @screenSplit);
+//   }
+// }
+
+// // 540宽 分15份
+// @media screen and (min-width: @s540) {
+//   html {
+//     font-size: (@s540 / @screenSplit);
+//   }
+// }
+
+// // 720宽 分15份
+// @media screen and (min-width: @s720) {
+//   html {
+//     font-size: (@s720 / @screenSplit);
+//   }
+// }
+
+// // 750宽 分15份
+// @media screen and (min-width: @s750) {
+//   html {
+//     font-size: (@s750 / @screenSplit);
+//   }
+// }

@@ -1,0 +1,90 @@
+// 导入公共样式
+@import "common.less";
+
+body {
+  min-width: 320px;
+  width: 15rem;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-family: Arial, Helvetica;
+  background-color: #F2F2F2;
+}
+
+// 变量
+@baseFontSize: 50;
+
+// 搜索框开始
+.search {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: auto;
+  min-width: inherit;
+  width: inherit;
+  height: (88rem / @baseFontSize);
+  background-color: #FFC001;
+
+  .classify {
+    @cw: (44rem / @baseFontSize);
+    @ch: (70rem / @baseFontSize);
+    @cf: (@ch / 1.5); // 定义字体大小
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: @cw;
+    height: @ch;
+    margin: (11rem / @baseFontSize) 
+    (25rem / @baseFontSize) 
+    (7rem / @baseFontSize) 
+    (24rem / @baseFontSize);
+    
+    &::before {
+      content: "\e9bb";
+      width: min-content;
+      font-family: 'icomoon';
+      font-size: @cf * 0.6;
+    }
+
+    span {
+      font-size: @cf * 0.4;
+    }
+
+    &::before, span {
+      color: #fff;
+    }
+  }
+
+  .search-box {
+    flex: 1;
+
+    form {
+      // 设计为0取消掉line-hight,便于input撑开
+      font-size: 0;
+    }
+
+    input[type=search] {
+      @ih: (66rem / @baseFontSize); 
+      height: @ih;
+      width: 100%;
+      font-size: (25rem / @baseFontSize);
+      margin-top: (12rem / @baseFontSize);
+      padding-left: (55rem / @baseFontSize);
+      border-radius: (@ih / 2);
+      color: #757575;
+    }
+  }
+
+  .login {
+    width: (75rem / @baseFontSize);
+    height: (70rem / @baseFontSize);
+    margin: (10rem / @baseFontSize) (10rem / @baseFontSize) 0;
+    font-size: (25rem / @baseFontSize);
+    text-align: center;
+    line-height: (70rem / @baseFontSize);
+    color: #fff;
+  }
+}
+
+
+// 搜索框结束
